@@ -1,0 +1,46 @@
+body {
+    background-image: url(./img/cloud.jpg);
+  }
+
+
+#app{
+background-color: rgba(255, 255, 255, 0.5);
+text-align: center;
+padding: 40px;
+margin: 20px;
+border-radius: 10px;
+}
+
+.headline{
+    color: black;
+    font-size: xx-large;
+    padding: 20px;
+    font-family: fantasy;
+}
+
+
+
+input[type=text], textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 15%;
+    background-color: #529fe7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #137ee2;
+  }
