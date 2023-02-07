@@ -1,0 +1,23 @@
+{
+  "name": "capstone-project-travel-app",
+  "version": "1.0.0",
+  "description": "## Overview This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/index.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EimanAsghar/Capstone-Project-Travel-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EimanAsghar/Capstone-Project-Travel-App/issues"
+  },
+  "homepage": "https://github.com/EimanAsghar/Capstone-Project-Travel-App#readme"
+}
