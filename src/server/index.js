@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 /*const dotenv = require('dotenv');
 dotenv.config();*/
 
@@ -6,6 +9,11 @@ dotenv.config();*/
 const weatherbitURL = 'https://api.weatherbit.io/v2.0/forecast/daily';
 const weatherbitKey = process.env['WEATHERBIT_API_KEY'];
 console.log(`API Key: ${process.env.WEATHERBIT_API_KEY}`);*/
+
+// Pixabay API
+const pixabay_URL = 'https://pixabay.com/api/?key=';
+const pixabay_Key = `${process.env.Pixabay_API_KEY}&q=`;
+const pixabay_parameters = '&image_type=photo';
 
 
 // Setup empty JS object to act as endpoint for all routes
@@ -76,3 +84,20 @@ app.post('/sendData', async function(req, res) {
 
 
 })*/
+
+
+app.post('/pixabayAPI', async function(req, res) {
+
+  location = req.body.location
+  const apiData = `${pixabay_URL}${pixabay_Key}${location}${pixabay_parameters}`
+
+  const response = await fetch(apiData)
+  const data = await response.json()
+  
+  PixabayData= {
+    photo: data.hits[0].largeImageURL
+  }
+
+  res.send(PixabayData)
+
+})
