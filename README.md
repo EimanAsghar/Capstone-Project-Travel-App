@@ -22,4 +22,8 @@ Run the project:
 Then open:
 http://localhost:8080/
 
+For Testing Run:
+- `npm run test`
+
+
 
