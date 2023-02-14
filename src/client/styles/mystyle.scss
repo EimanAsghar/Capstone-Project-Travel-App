@@ -39,6 +39,7 @@ input[type=text], textarea{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-family: fantasy;
   }
   
   button:hover {
@@ -53,4 +54,11 @@ input[type=text], textarea{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+  }
+
+  #entryHolder{
+    color: black;
+    font-size: medium;
+    padding: 20px;
+    font-family: fantasy;
   }
