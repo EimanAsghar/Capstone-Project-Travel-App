@@ -21,6 +21,12 @@ function performAction(e) {
       postData('http://localhost:3000/pixabayAPI', { location: location })
       .then(photo => {
         console.log(photo)
+      }).then(function(){
+        postData('http://localhost:3000/weatherbitAPI')
+        .then(weatherbitinfo => {
+          console.log(weatherbitinfo)
+        })
+
       })
     })
     .then(function () {
@@ -73,9 +79,13 @@ const updateUI = async () => {
   try {
     const allData = await request.json();
 
-    document.getElementById('date2').innerHTML = allData.lng;
-    document.getElementById('summary').innerHTML = allData.lat;
-    document.getElementById('high').innerHTML = allData.countryName;
+    document.getElementById('countryName').innerHTML = allData[0].countryName;
+    document.getElementById('description').innerHTML = allData[1].description;
+    document.getElementById('high').innerHTML = allData[1].high_temp;
+    document.getElementById('low').innerHTML = allData[1].low_temp;
+    document.getElementById('picture').innerHTML =  `<img height= 250px; width= 250px; src=${allData[2].photo}>`;
+
+
 
   } catch (error) {
     console.log("error", error);

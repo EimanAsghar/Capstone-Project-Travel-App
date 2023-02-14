@@ -21,7 +21,7 @@ border-radius: 10px;
 
 
 input[type=text], textarea{
-    width: 100%;
+    width: 45%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -43,4 +43,14 @@ input[type=text], textarea{
   
   button:hover {
     background-color: #137ee2;
+  }
+
+  input[type=date]{
+    width: 45%;
+    padding: 12px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }

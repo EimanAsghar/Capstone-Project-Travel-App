@@ -1,14 +1,11 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-/*const dotenv = require('dotenv');
-dotenv.config();*/
-
 // weatherbit API
-/*
+
 const weatherbitURL = 'https://api.weatherbit.io/v2.0/forecast/daily';
 const weatherbitKey = process.env['WEATHERBIT_API_KEY'];
-console.log(`API Key: ${process.env.WEATHERBIT_API_KEY}`);*/
+console.log(`API Key: ${process.env.WEATHERBIT_API_KEY}`);
 
 // Pixabay API
 const pixabay_URL = 'https://pixabay.com/api/?key=';
@@ -56,13 +53,6 @@ const port = 3000;
   app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
   })
-  
-  // GET route
-app.get('/all', sendData);
-
-function sendData (request, response) {
-    response.send(geonamesData);
-};
 
 // POST route
 app.post('/geonamesAPI', callBack_geonames);
@@ -74,16 +64,22 @@ function callBack_geonames(request, response){
   response.send(geonamesData);
 };
 
-/*
-WEATHERE !!!!!!!!!!
-app.post('/sendData', async function(req, res) {
+
+//WEATHERE !!!!!!!!!!
+app.post('/weatherbitAPI', async function(req, res) {
 
   const apiData = weatherbitURL + `?&lat=${geonamesData.lat}&lon=${geonamesData.lng}&key=` + weatherbitKey
   const response = await fetch(apiData)
   const data = await response.json()
+  weatherbitData = {
+    'description': data.data[0].weather.description,
+    'high_temp':  data.data[0].high_temp,
+    'low_temp':  data.data[0].low_temp
 
-
-})*/
+  }
+  console.log(weatherbitData)
+  res.send(weatherbitData)
+})
 
 
 app.post('/pixabayAPI', async function(req, res) {
@@ -93,11 +89,23 @@ app.post('/pixabayAPI', async function(req, res) {
 
   const response = await fetch(apiData)
   const data = await response.json()
-  
+
   PixabayData= {
-    photo: data.hits[0].largeImageURL
+    'photo': data.hits[0].largeImageURL
   }
 
   res.send(PixabayData)
 
 })
+
+  
+  // GET route
+  app.get('/all', sendData);
+
+  function sendData (request, response) {
+    let result = [geonamesData, weatherbitData, PixabayData]
+    console.log(result)
+    response.send(result);
+  };
+  
+  
