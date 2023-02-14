@@ -30,7 +30,7 @@ function performAction(e) {
       })
     })
     .then(function () {
-      updateUI()
+      updateUI(location)
     })
 }
 // Async GET
@@ -74,15 +74,15 @@ const postData = async (url = '', data = {}) => {
 };
 
 
-const updateUI = async () => {
+const updateUI = async (location) => {
   const request = await fetch('http://localhost:3000/all');
   try {
     const allData = await request.json();
 
-    document.getElementById('countryName').innerHTML = allData[0].countryName;
+    document.getElementById('countryName').innerHTML = `${location}, ${allData[0].countryName}`;
+    document.getElementById('high').innerHTML = `Weather: High temperature: ${allData[1].high_temp}`;
+    document.getElementById('low').innerHTML = `Low temperature ${allData[1].low_temp}`;
     document.getElementById('description').innerHTML = allData[1].description;
-    document.getElementById('high').innerHTML = allData[1].high_temp;
-    document.getElementById('low').innerHTML = allData[1].low_temp;
     document.getElementById('picture').innerHTML =  `<img height= 250px; width= 250px; src=${allData[2].photo}>`;
 
 
