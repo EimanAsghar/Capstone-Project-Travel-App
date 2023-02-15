@@ -1,15 +1,57 @@
+
+		/* Media Query for Mobile Devices */
+		@media (max-width: 480px) {
+      #app{
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        padding: 70px;
+        margin: 20px;
+        border-radius: 10px;
+        }
+		}
+		
+		/* Media Query for low resolution Tablets, Ipads */
+		@media (min-width: 481px) and (max-width: 767px) {
+	
+      #app{
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        padding: 80px;
+        margin: 20px;
+        border-radius: 10px;
+        }
+		}
+		
+		/* Media Query for Tablets Ipads portrait mode */
+		@media (min-width: 768px) and (max-width: 1024px){
+
+      #app{
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        padding: 90px;
+        margin: 20px;
+        border-radius: 10px;
+        }
+		}
+		
+		/* Media Query for Laptops and Desktops */
+		@media (min-width: 1025px) and (max-width: 1280px){
+			#app{
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        padding: 100px;
+        margin: 20px;
+        border-radius: 10px;
+        }
+		}
+
+
 body {
     background-color: rgb(186, 212, 249);
   }
 
 
-#app{
-background-color: rgba(255, 255, 255, 0.5);
-text-align: center;
-padding: 40px;
-margin: 20px;
-border-radius: 10px;
-}
+
 
 .headline{
     color: black;
