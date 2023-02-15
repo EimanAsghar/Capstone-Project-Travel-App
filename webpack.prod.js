@@ -30,11 +30,7 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
-        new WorkboxPlugin.GenerateSW({
-            swDest: './dist/service-worker.js',
-            clientsClaim: true,
-            skipWaiting: true,
-        })
+        new WorkboxPlugin.GenerateSW()
         ],
     optimization: {
         minimizer: [new TerserPlugin({})]
